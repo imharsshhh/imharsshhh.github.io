@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#283618" />
+
+  <!-- Preconnect to Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Inline Script for Immediate Theme Resolution (Prevents FOUC) -->
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
+    } catch (e) {
+      document.documentElement.dataset.theme = "dark";
+    }
+  </script>
+
+  <!-- SEO & Social Meta Tags -->
+  <title>Harsh Moradiya — Flutter Developer &amp; Mobile Engineer</title>
+  <meta name="description"
+    content="Harsh Moradiya is a Flutter developer building secure, reliable mobile apps across fintech, commerce and education." />
+  <meta name="author" content="Harsh Moradiya" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Harsh Moradiya — Flutter Developer &amp; Mobile Engineer" />
+  <meta property="og:description"
+    content="Building secure, scalable, and high-performance mobile apps across fintech, commerce, and education." />
+  <meta property="og:image" content="mobile-illustration.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Harsh Moradiya — Flutter Developer &amp; Mobile Engineer" />
+  <meta name="twitter:description"
+    content="Building secure, scalable, and high-performance mobile apps across fintech, commerce, and education." />
+  <meta name="twitter:image" content="mobile-illustration.png" />
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23283618'/><text x='50%' y='63%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='50' fill='%23dda15e'>H.</text></svg>"
+    type="image/svg+xml" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Harsh Moradiya home">Harsh<span>.</span> Moradiya</a>
+      
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true">☀</span>
+          <span class="theme-label">Light mode</span>
+        </button>
+        <button class="menu" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">☰</button>
+      </div>
+
+      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="#work">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a class="nav-contact" href="#contact">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-content">
+          <div class="status-badge" aria-label="Availability status">
+            <span class="status-dot"></span>
+            <span>Available for projects &amp; full-time roles</span>
+          </div>
+          <p class="eyebrow">Flutter developer · Mobile engineering</p>
+          <h1>Flutter apps, built for <em>real-world scale.</em></h1>
+          <p>Hi, I’m Harsh. I help teams turn complex mobile requirements into secure, reliable products, from the first
+            architecture decision to a confident release.</p>
+          
+          <div class="hero-proof-scroll">
+            <div class="hero-proof">
+              <span>5+ years building apps</span>
+              <span>Fintech, commerce &amp; edtech</span>
+              <span>Android &amp; iOS</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline" href="mailto:moradiyas.cool@gmail.com">Email me</a>
+          </div>
+        </div>
+
+        <figure class="hero-art">
+          <picture>
+            <source srcset="mobile-illustration.webp" type="image/webp" />
+            <img src="mobile-illustration.png" alt="Illustration of a mobile app interface on a phone" width="1312"
+              height="1199" loading="eager" fetchpriority="high" />
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Work / Projects Section -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div>
+            <p class="kicker">Selected work</p>
+            <h2>Products I've helped build</h2>
+          </div>
+          <p class="section-intro">A selection of the products and platforms I’ve contributed to across banking, retail,
+            education and productivity.</p>
+        </div>
+
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <article class="project reveal">
+            <div class="project-top-row">
+              <div class="project-mark" aria-hidden="true">NJ</div>
+              <div class="project-meta">
+                <span class="num">01 / FINTECH</span>
+                <h3>NSDL Jiffy</h3>
+              </div>
+            </div>
+            <p class="project-summary">Digital banking app for zero balance savings accounts with biometric flows and payload encryption.</p>
+            
+            <div class="project-expand-wrapper">
+              <div class="project-expand-inner">
+                <p class="project-full-desc">Worked on secure transactions, biometric flows, payload encryption, API integration and release delivery.</p>
+                <div class="tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">AES / RSA</span>
+                  <span class="tag">Mobile security</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="project-toggle" type="button" aria-expanded="false" aria-label="Toggle details for NSDL Jiffy">
+              <span class="toggle-text">View details &amp; tech</span>
+              <span class="toggle-chevron" aria-hidden="true">▾</span>
+            </button>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project reveal">
+            <div class="project-top-row">
+              <div class="project-mark" aria-hidden="true">H</div>
+              <div class="project-meta">
+                <span class="num">02 / COMMERCE</span>
+                <h3>HUFT — Online Pet Store</h3>
+              </div>
+            </div>
+            <p class="project-summary">E-commerce mobile app with GraphQL data flows, payment gateways and shopping analytics.</p>
+            
+            <div class="project-expand-wrapper">
+              <div class="project-expand-inner">
+                <p class="project-full-desc">Led a three person development team and implemented GraphQL data flows, payment gateways and ecommerce analytics for a personalized shopping experience.</p>
+                <div class="tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">GraphQL</span>
+                  <span class="tag">Cashfree / Razorpay</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="project-toggle" type="button" aria-expanded="false" aria-label="Toggle details for HUFT Online Pet Store">
+              <span class="toggle-text">View details &amp; tech</span>
+              <span class="toggle-chevron" aria-hidden="true">▾</span>
+            </button>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project reveal">
+            <div class="project-top-row">
+              <div class="project-mark" aria-hidden="true">U</div>
+              <div class="project-meta">
+                <span class="num">03 / EDTECH</span>
+                <h3>Unikaksha</h3>
+              </div>
+            </div>
+            <p class="project-summary">Cross-platform career upskilling platform with responsive Flutter Web &amp; mobile interfaces.</p>
+            
+            <div class="project-expand-wrapper">
+              <div class="project-expand-inner">
+                <p class="project-full-desc">Built mobile and Flutter Web interfaces for a career upskilling platform, with responsive experiences and secure content delivery.</p>
+                <div class="tags">
+                  <span class="tag">Flutter Web</span>
+                  <span class="tag">Firebase</span>
+                  <span class="tag">AWS</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="project-toggle" type="button" aria-expanded="false" aria-label="Toggle details for Unikaksha">
+              <span class="toggle-text">View details &amp; tech</span>
+              <span class="toggle-chevron" aria-hidden="true">▾</span>
+            </button>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project reveal">
+            <div class="project-top-row">
+              <div class="project-mark" aria-hidden="true">MM</div>
+              <div class="project-meta">
+                <span class="num">04 / PERSONAL FINANCE</span>
+                <h3>Money Manager</h3>
+              </div>
+            </div>
+            <p class="project-summary">Offline-first expense &amp; income tracker with SQLite storage, analysis and in-app subscriptions.</p>
+            
+            <div class="project-expand-wrapper">
+              <div class="project-expand-inner">
+                <p class="project-full-desc">Expense and income tracking with offline SQLite storage, analysis and subscription management through in app purchases.</p>
+                <div class="tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">SQLite</span>
+                  <span class="tag">Subscriptions</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="project-toggle" type="button" aria-expanded="false" aria-label="Toggle details for Money Manager">
+              <span class="toggle-text">View details &amp; tech</span>
+              <span class="toggle-chevron" aria-hidden="true">▾</span>
+            </button>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project reveal">
+            <div class="project-top-row">
+              <div class="project-mark" aria-hidden="true">B</div>
+              <div class="project-meta">
+                <span class="num">05 / BUSINESS TOOLS</span>
+                <h3>ByteCRM</h3>
+              </div>
+            </div>
+            <p class="project-summary">Business CRM featuring live location tracking, lead management, invoices and time tracking.</p>
+            
+            <div class="project-expand-wrapper">
+              <div class="project-expand-inner">
+                <p class="project-full-desc">Small business CRM featuring live location tracking, lead management, invoices and employee time tracking.</p>
+                <div class="tags">
+                  <span class="tag">BLoC</span>
+                  <span class="tag">Firebase</span>
+                  <span class="tag">REST APIs</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="project-toggle" type="button" aria-expanded="false" aria-label="Toggle details for ByteCRM">
+              <span class="toggle-text">View details &amp; tech</span>
+              <span class="toggle-chevron" aria-hidden="true">▾</span>
+            </button>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project reveal">
+            <div class="project-top-row">
+              <div class="project-mark" aria-hidden="true">PF</div>
+              <div class="project-meta">
+                <span class="num">06 / CONTENT</span>
+                <h3>PsyFacts</h3>
+              </div>
+            </div>
+            <p class="project-summary">Psychology content app with 100k+ facts across 30+ categories, forums and real-time push feeds.</p>
+            
+            <div class="project-expand-wrapper">
+              <div class="project-expand-inner">
+                <p class="project-full-desc">Psychology content app with more than 100,000 facts across 30+ categories, plus a community forum and real time interactions.</p>
+                <div class="tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">Firebase</span>
+                  <span class="tag">OneSignal</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="project-toggle" type="button" aria-expanded="false" aria-label="Toggle details for PsyFacts">
+              <span class="toggle-text">View details &amp; tech</span>
+              <span class="toggle-chevron" aria-hidden="true">▾</span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+      <div class="wrap">
+        <div class="illustrated-heading reveal">
+          <div>
+            <p class="kicker">What I do</p>
+            <h2>How I can help your team</h2>
+            <p class="section-intro">Hands-on Flutter development from product planning to store release, with a focus
+              on stability and maintainable code.</p>
+          </div>
+          <picture>
+            <source srcset="services-illustration.webp" type="image/webp" />
+            <img src="services-illustration.png" alt="Illustration of connected mobile apps and integrations"
+              width="1536" height="1024" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <span class="service-no">01</span>
+            <h3>Mobile app development</h3>
+            <p>Build cross-platform Android and iOS experiences with Flutter, connected to the APIs and services your
+              product needs.</p>
+            <div class="service-detail">Flutter · Dart · Native integrations</div>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-no">02</span>
+            <h3>Architecture &amp; modernization</h3>
+            <p>Structure features for long-term maintenance, improve existing flows and make state and data handling
+              easier to reason about.</p>
+            <div class="service-detail">BLoC / Cubit · Clean Architecture</div>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-no">03</span>
+            <h3>Secure integrations &amp; releases</h3>
+            <p>Connect payment, authentication, analytics and notification services, then support testing and store
+              delivery.</p>
+            <div class="service-detail">Security · CI/CD · App stores</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="section approach" id="approach">
+      <div class="wrap">
+        <div class="illustrated-heading process-heading reveal">
+          <div>
+            <p class="kicker">Working method</p>
+            <h2>From brief to release</h2>
+            <p class="section-intro">A practical process that keeps scope, implementation and feedback visible
+              throughout the work.</p>
+          </div>
+          <picture>
+            <source srcset="process-illustration.webp" type="image/webp" />
+            <img src="process-illustration.png" alt="Four connected stages from idea through launch" width="2079"
+              height="756" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+
+        <div class="process-grid reveal">
+          <div class="process-step">
+            <span>01 / Understand</span>
+            <h3>Define the problem</h3>
+            <p>Clarify goals, users, constraints and the existing technical setup.</p>
+          </div>
+          <div class="process-step">
+            <span>02 / Plan</span>
+            <h3>Shape the solution</h3>
+            <p>Map the app flow, integrations and architecture before building.</p>
+          </div>
+          <div class="process-step">
+            <span>03 / Build</span>
+            <h3>Develop &amp; verify</h3>
+            <p>Implement in manageable steps and review behavior with the team.</p>
+          </div>
+          <div class="process-step">
+            <span>04 / Release</span>
+            <h3>Ship &amp; refine</h3>
+            <p>Support QA, deployment and improvements informed by real use.</p>
+          </div>
+        </div>
+
+        <div class="ai-panel reveal">
+          <div class="ai-copy">
+            <p class="kicker">Modern workflow</p>
+            <h3>AI-assisted, engineer-reviewed</h3>
+            <p>I use AI-assisted workflows to explore ideas, draft repetitive code, think through test cases and improve
+              documentation. Architecture, security decisions and the final implementation still get deliberate review.
+            </p>
+          </div>
+          <picture>
+            <source srcset="ai-illustration.webp" type="image/webp" />
+            <img class="ai-art" src="ai-illustration.png" alt="Illustration of reviewed code on a laptop"
+              width="1536" height="1024" loading="lazy" decoding="async" />
+          </picture>
+          <div class="ai-points">
+            <span>Faster exploration</span>
+            <span>Test-case ideation</span>
+            <span>Clearer documentation</span>
+            <span>Human review</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div>
+            <p class="kicker">Career</p>
+            <h2>Experience</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="role reveal">
+            <div class="role-top">
+              <h3>Mobile Application Developer · Ascra Technologies</h3>
+              <time datetime="2023-04">Apr 2023 — Present</time>
+            </div>
+            <p class="context">Client: NSDL Payments Bank</p>
+            <ul>
+              <li>Develop and release features for NSDL Jiffy across the mobile banking journey.</li>
+              <li>Implement encryption, biometric authentication and device security integrations.</li>
+              <li>Work with backend and QA teams on banking workflows and compliance requirements.</li>
+            </ul>
+          </article>
+
+          <article class="role reveal">
+            <div class="role-top">
+              <h3>Flutter Developer · Uphold Solution</h3>
+              <time datetime="2021-01">Jan 2021 — Apr 2023</time>
+            </div>
+            <p class="context">Client applications across commerce, education and utilities</p>
+            <ul>
+              <li>Shipped 5+ Flutter applications across Android and iOS.</li>
+              <li>Built maintainable BLoC/Cubit codebases and automated releases with GitHub Actions.</li>
+              <li>Led a three person team for the HUFT shopping app.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="wrap skills-layout">
+        <div class="reveal">
+          <p class="kicker">Toolkit</p>
+          <h2>Skills &amp; approach</h2>
+          <p class="section-intro">A current toolkit for cross-platform development, integrations and production
+            delivery.</p>
+        </div>
+        <div class="skill-list reveal">
+          <div class="skill-row">
+            <strong>Mobile &amp; web</strong>
+            <span>Flutter, Dart, Kotlin, Swift, Flutter Web</span>
+          </div>
+          <div class="skill-row">
+            <strong>Architecture</strong>
+            <span>BLoC, Cubit, Riverpod, Clean Architecture</span>
+          </div>
+          <div class="skill-row">
+            <strong>Backend &amp; data</strong>
+            <span>REST, GraphQL, Firebase, Supabase, Appwrite, SQLite</span>
+          </div>
+          <div class="skill-row">
+            <strong>Delivery</strong>
+            <span>GitHub Actions, Android product flavors, iOS schemes, app releases</span>
+          </div>
+          <div class="skill-row">
+            <strong>Specialties</strong>
+            <span>Payload encryption, biometric flows, payments, push notifications</span>
+          </div>
+          <div class="skill-row">
+            <strong>Modern workflow</strong>
+            <span>AI-assisted prototyping, test planning and documentation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Get in touch</p>
+          <h2>Have a mobile project in mind?</h2>
+          <p>Share what you're building, the platforms you need and your timeline. I'll be glad to discuss how I can
+            contribute.</p>
+        </div>
+        <div class="contact-links reveal">
+          <a class="btn btn-primary" href="mailto:moradiyas.cool@gmail.com?subject=Mobile%20project%20enquiry">Send an email <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-outline" href="tel:+918401830836">Call me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Harsh Moradiya</span>
+      <span>Flutter Developer · Surat, India</span>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky Quick-Action Bar -->
+  <aside class="mobile-action-bar" aria-label="Quick contact actions">
+    <a class="mobile-bar-btn mobile-bar-primary" href="mailto:moradiyas.cool@gmail.com?subject=Mobile%20project%20enquiry">
+      <span class="bar-icon" aria-hidden="true">✉️</span>
+      <span>Email</span>
+    </a>
+    <a class="mobile-bar-btn mobile-bar-secondary" href="tel:+918401830836">
+      <span class="bar-icon" aria-hidden="true">📞</span>
+      <span>Call</span>
+    </a>
+    <a class="mobile-bar-btn mobile-bar-outline" href="#work">
+      <span class="bar-icon" aria-hidden="true">📁</span>
+      <span>Work</span>
+    </a>
+    <a class="mobile-bar-btn mobile-bar-outline" href="#top" aria-label="Scroll to top">
+      <span class="bar-icon" aria-hidden="true">↑</span>
+      <span>Top</span>
+    </a>
+  </aside>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>

@@ -113,10 +113,11 @@ projectCards.forEach((card) => {
     });
   }
 
-  // On mobile touch screens, tapping the card header also toggles
+  // On mobile touch screens, tapping the card header also toggles (unless clicking a link)
   const topRow = card.querySelector('.project-top-row');
   if (topRow) {
-    topRow.addEventListener('click', () => {
+    topRow.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
       if (window.innerWidth <= 768) {
         toggleProject();
       }
@@ -151,3 +152,38 @@ if ('IntersectionObserver' in window && !prefersReducedMotion) {
   // If reduced motion is preferred or IntersectionObserver is unsupported, reveal immediately
   revealElements.forEach((el) => el.classList.add('visible'));
 }
+
+// ==========================================================================
+// View More / View Less Projects Toggle
+// ==========================================================================
+const viewMoreBtn = document.getElementById('viewMoreProjectsBtn');
+const projectGrid = document.getElementById('projectGrid');
+
+if (viewMoreBtn && projectGrid) {
+  viewMoreBtn.addEventListener('click', () => {
+    const isExpanded = viewMoreBtn.getAttribute('aria-expanded') === 'true';
+    const nextState = !isExpanded;
+
+    viewMoreBtn.setAttribute('aria-expanded', String(nextState));
+    projectGrid.classList.toggle('show-all', nextState);
+
+    const btnText = viewMoreBtn.querySelector('.btn-text');
+    if (btnText) {
+      btnText.textContent = nextState ? 'View Less Projects' : 'View More Projects (4)';
+    }
+
+    if (nextState) {
+      const extraCards = projectGrid.querySelectorAll('.project.project-extra');
+      extraCards.forEach((card) => {
+        card.classList.add('visible');
+      });
+    } else {
+      const workSection = document.getElementById('work');
+      if (workSection) {
+        const topPos = workSection.getBoundingClientRect().top + window.pageYOffset - 70;
+        window.scrollTo({ top: topPos, behavior: 'smooth' });
+      }
+    }
+  });
+}
+

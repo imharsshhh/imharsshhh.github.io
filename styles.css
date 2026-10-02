@@ -29,6 +29,14 @@
   --focus-ring: #dda15e;
   --card-shadow: 0 18px 38px rgba(0, 0, 0, 0.25);
   --header-backdrop: rgba(27, 36, 19, 0.92);
+
+  /* WhatsApp Themed Variant (Dark Mode) */
+  --whatsapp-bg: #223c24;
+  --whatsapp-border: #3c6d40;
+  --whatsapp-text: #e2f7e4;
+  --whatsapp-hover-bg: #2b502e;
+  --whatsapp-hover-border: #4d8d52;
+  --whatsapp-glow: rgba(74, 222, 128, 0.18);
 }
 
 :root[data-theme="light"] {
@@ -55,6 +63,14 @@
   --focus-ring: #bc6c25;
   --card-shadow: 0 18px 38px rgba(40, 54, 24, 0.08);
   --header-backdrop: rgba(254, 250, 224, 0.92);
+
+  /* WhatsApp Themed Variant (Light Mode) */
+  --whatsapp-bg: #e6f4ea;
+  --whatsapp-border: #9ad2a2;
+  --whatsapp-text: #1b5e20;
+  --whatsapp-hover-bg: #d4edd9;
+  --whatsapp-hover-border: #388e3c;
+  --whatsapp-glow: rgba(46, 125, 50, 0.12);
 }
 
 /* ==========================================================================
@@ -432,10 +448,128 @@ section {
   border-color: var(--accent-strong);
 }
 
+.btn-whatsapp {
+  background: var(--whatsapp-bg);
+  color: var(--whatsapp-text);
+  border: 1px solid var(--whatsapp-border);
+  box-shadow: 0 3px 12px var(--whatsapp-glow);
+}
+
+.btn-whatsapp:hover {
+  background: var(--whatsapp-hover-bg);
+  border-color: var(--whatsapp-hover-border);
+  color: var(--text);
+  box-shadow: 0 6px 18px var(--whatsapp-glow);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp .btn-icon,
+.btn-whatsapp .icon-png {
+  fill: currentColor;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.btn-whatsapp:hover .btn-icon,
+.btn-whatsapp:hover .icon-png {
+  transform: scale(1.1);
+}
+
 .btn-outline {
   border: 1px solid var(--border);
   color: var(--text);
   background: transparent;
+}
+
+/* ==========================================================================
+   Themed PNG Icon System (Dynamic color switching per light/dark mode & hover)
+   ========================================================================== */
+
+.icon-png {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  flex-shrink: 0;
+  vertical-align: middle;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.icon-github {
+  -webkit-mask-image: url('github.png');
+  mask-image: url('github.png');
+}
+
+.icon-linkedin {
+  -webkit-mask-image: url('linkedin.png');
+  mask-image: url('linkedin.png');
+}
+
+.icon-playstore {
+  -webkit-mask-image: url('playstore.png');
+  mask-image: url('playstore.png');
+}
+
+.icon-stackoverflow {
+  -webkit-mask-image: url('stack-overflow.png');
+  mask-image: url('stack-overflow.png');
+}
+
+.icon-medium {
+  -webkit-mask-image: url('medium.png');
+  mask-image: url('medium.png');
+}
+
+.icon-whatsapp {
+  -webkit-mask-image: url('whatsapp-logo.png');
+  mask-image: url('whatsapp-logo.png');
+}
+
+/* Social Pills & Profile Links */
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--raised);
+  border: 1px solid var(--border);
+  padding: 6px 13px;
+  border-radius: 20px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.social-pill:hover {
+  color: var(--accent-strong);
+  border-color: var(--accent);
+  background: var(--surface);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+}
+
+.social-pill:hover .icon-png {
+  transform: scale(1.15);
+}
+
+.social-pill:active {
+  transform: scale(0.96);
 }
 
 .btn-outline:hover {
@@ -470,7 +604,7 @@ section {
 
 /* ==========================================================================
    Section Headers & Common
-   ========================================================================== */
+   ========================================================================= */
 
 .section-heading {
   display: flex;
@@ -542,13 +676,13 @@ section {
 .project-top-row {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   width: 100%;
 }
 
 .project-mark {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: 10px;
   display: grid;
   place-items: center;
@@ -556,7 +690,7 @@ section {
   border: 1px solid var(--border);
   color: var(--accent-strong);
   font-weight: 700;
-  font-size: 17px;
+  font-size: 16px;
   letter-spacing: -0.04em;
   flex-shrink: 0;
 }
@@ -575,11 +709,65 @@ section {
 }
 
 .project-meta h3 {
-  font-size: 21px;
+  font-size: 20px;
   letter-spacing: -0.03em;
   margin: 4px 0 0;
   font-weight: 700;
   word-break: break-word;
+}
+
+.play-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent-strong);
+  background: var(--raised);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-left: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.play-store-btn:hover {
+  background: var(--button);
+  color: var(--button-text);
+  border-color: var(--button);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(221, 161, 94, 0.28);
+}
+
+.play-store-btn:active {
+  transform: scale(0.95);
+}
+
+.play-svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.play-store-btn:hover .play-svg {
+  transform: scale(1.15);
+}
+
+.play-store-btn .btn-arrow {
+  font-size: 11px;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.play-store-btn:hover .btn-arrow {
+  transform: translate(2px, -2px);
+  opacity: 1;
 }
 
 .project-summary {
@@ -632,6 +820,73 @@ section {
 /* Toggle button is hidden on desktop */
 .project-toggle {
   display: none;
+}
+
+/* Extra Projects (Hidden by default, shown when user clicks View More) */
+.project.project-extra {
+  display: none;
+}
+
+.project-grid.show-all .project.project-extra {
+  display: flex;
+  animation: fadeInCard 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+  width: 100%;
+}
+
+.view-more-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  background: var(--raised);
+  border: 1px solid var(--border);
+  color: var(--text);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.view-more-projects-btn:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+  color: var(--accent-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+}
+
+.view-more-projects-btn:active {
+  transform: scale(0.97);
+}
+
+.view-more-projects-btn .btn-arrow-icon {
+  font-size: 14px;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.view-more-projects-btn[aria-expanded="true"] .btn-arrow-icon {
+  transform: rotate(180deg);
 }
 
 /* ==========================================================================
@@ -1020,6 +1275,34 @@ section {
   justify-content: flex-end;
 }
 
+.contact-socials {
+  grid-column: 1 / -1;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.socials-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0;
+}
+
+.social-links-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 footer {
   background: var(--hero);
   color: var(--muted);
@@ -1030,11 +1313,55 @@ footer {
   width: 100%;
 }
 
-footer .wrap {
+.footer-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--muted);
+  background: var(--raised);
+  border: 1px solid var(--border);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.social-icon-btn:hover {
+  color: var(--accent-strong);
+  border-color: var(--accent);
+  background: var(--surface);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.social-icon-btn:hover .icon-png {
+  transform: scale(1.15);
+}
+
+.social-icon-btn:active {
+  transform: scale(0.94);
 }
 
 /* Mobile Sticky Action Bar Default (Hidden on desktop) */
@@ -1171,13 +1498,18 @@ footer .wrap {
   }
 
   .project {
-    padding: 22px 18px;
+    padding: 20px 16px;
     border-radius: 14px;
     cursor: pointer;
   }
 
   .project:active {
     transform: scale(0.99);
+  }
+
+  .play-store-btn {
+    padding: 5px 9px;
+    font-size: 11px;
   }
 
   .project-expand-wrapper {
@@ -1388,6 +1720,18 @@ footer .wrap {
     transform: scale(0.94);
   }
 
+  .mobile-bar-whatsapp {
+    background: var(--whatsapp-bg);
+    color: var(--whatsapp-text);
+    border: 1px solid var(--whatsapp-border);
+    font-weight: 700;
+  }
+
+  .mobile-bar-whatsapp:active {
+    background: var(--whatsapp-hover-bg);
+    border-color: var(--whatsapp-hover-border);
+  }
+
   .mobile-bar-primary {
     background: var(--button);
     color: var(--button-text);
@@ -1414,8 +1758,19 @@ footer .wrap {
   }
 
   .bar-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 15px;
     line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .bar-icon svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
   }
 }
 
@@ -1449,10 +1804,11 @@ footer .wrap {
     padding: 14px 0;
   }
 
-  footer .wrap {
+  footer .wrap,
+  .footer-wrap {
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
+    gap: 14px;
   }
 }
 
@@ -1485,6 +1841,22 @@ footer .wrap {
     flex-direction: column;
     gap: 10px;
     margin-top: 22px;
+  }
+
+  .hero-socials {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .social-pill {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .contact-socials {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .btn {
@@ -1529,7 +1901,8 @@ footer .wrap {
   .service-card,
   .theme-toggle,
   .mobile-bar-btn,
-  .status-dot {
+  .status-dot,
+  .play-store-btn {
     transition: none;
     animation: none;
   }

@@ -829,8 +829,13 @@ section {
 
 .project-grid.show-all .project.project-extra {
   display: flex;
-  animation: fadeInCard 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInCard 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.project-grid.show-all .project.project-extra:nth-of-type(7) { animation-delay: 0.04s; }
+.project-grid.show-all .project.project-extra:nth-of-type(8) { animation-delay: 0.08s; }
+.project-grid.show-all .project.project-extra:nth-of-type(9) { animation-delay: 0.12s; }
+.project-grid.show-all .project.project-extra:nth-of-type(10) { animation-delay: 0.16s; }
 
 @keyframes fadeInCard {
   from {

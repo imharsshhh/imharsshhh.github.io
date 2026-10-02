@@ -160,6 +160,9 @@ const viewMoreBtn = document.getElementById('viewMoreProjectsBtn');
 const projectGrid = document.getElementById('projectGrid');
 
 if (viewMoreBtn && projectGrid) {
+  const extraCards = projectGrid.querySelectorAll('.project.project-extra');
+  const extraCount = extraCards.length;
+
   viewMoreBtn.addEventListener('click', () => {
     const isExpanded = viewMoreBtn.getAttribute('aria-expanded') === 'true';
     const nextState = !isExpanded;
@@ -169,20 +172,29 @@ if (viewMoreBtn && projectGrid) {
 
     const btnText = viewMoreBtn.querySelector('.btn-text');
     if (btnText) {
-      btnText.textContent = nextState ? 'View Less Projects' : 'View More Projects (4)';
+      btnText.textContent = nextState ? 'View Less Projects' : `View More Projects (${extraCount})`;
     }
 
     if (nextState) {
-      const extraCards = projectGrid.querySelectorAll('.project.project-extra');
       extraCards.forEach((card) => {
         card.classList.add('visible');
       });
-    } else {
-      const workSection = document.getElementById('work');
-      if (workSection) {
-        const topPos = workSection.getBoundingClientRect().top + window.pageYOffset - 70;
-        window.scrollTo({ top: topPos, behavior: 'smooth' });
+      // On mobile, gently scroll to reveal the newly expanded extra projects
+      if (window.innerWidth <= 768 && extraCards.length > 0) {
+        extraCards[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
+    } else {
+      // Close open accordions on extra cards when collapsed
+      extraCards.forEach((card) => {
+        card.classList.remove('is-open');
+        const toggleBtn = card.querySelector('.project-toggle');
+        const toggleText = card.querySelector('.toggle-text');
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+        if (toggleText) toggleText.textContent = 'View details & tech';
+      });
+
+      // Smoothly keep the view-more toggle in comfortable view without jumping
+      viewMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   });
 }
